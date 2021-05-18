@@ -1,0 +1,35 @@
+en:
+  sms77:
+    helpers:
+      api_key: Required for sending - get yours for free now
+      from:
+        sms: Sender number - may contain up to 11 alphanumeric or 16 numeric characters
+        voice: Caller ID - please use only verified sender IDs, one of your virtual inbound numbers or one of our shared virtual numbers
+      to: send to given recipient(s) instead of querying users with given filters
+    labels:
+      api_key: API Key
+      debug: Debug
+      delay: Delay
+      filters:
+        admin: Admin
+        groups: Groups
+        header: Filters
+      flash: Flash
+      foreign_id: Foreign ID
+      from: From
+      groups_all: All Groups
+      label: Label
+      no_reload: No Reload
+      performance_tracking: Performance Tracking
+      text: Text
+      to: To
+      ttl: TTL
+      xml: XML
+    menu:
+      sms: Sms77 SMS
+      voice: Sms77 Voice
+    no_recipients_found: No recipient(s) given
+    settings:
+      general: General
+    sms: SMS
+    voice: Voice

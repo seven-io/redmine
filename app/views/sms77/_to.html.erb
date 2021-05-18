@@ -1,0 +1,4 @@
+<%= label_tag 'to', l('sms77.labels.to') %>&nbsp;-&nbsp;<small><%= l('sms77.helpers.to') %></small>
+<%= text_field_tag 'to', request.query_parameters[:to].nil? ? params[:to] : request.query_parameters[:to],
+                   :style => 'width: 100%' %>
+<hr>

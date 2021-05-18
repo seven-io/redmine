@@ -1,0 +1,25 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    faraday (1.4.1)
+      faraday-excon (~> 1.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords (>= 0.0.4)
+    faraday-excon (1.1.0)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.1.0)
+    multipart-post (2.1.1)
+    ruby2_keywords (0.0.4)
+    sms77 (0.4.0)
+      faraday (~> 1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  sms77
+
+BUNDLED WITH
+   1.17.3

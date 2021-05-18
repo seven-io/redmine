@@ -1,0 +1,24 @@
+<% if request.query_parameters[:to].nil? %>
+  <%= field_set_tag l('sms77.labels.filters.header') do %>
+    <label for='filter_groups'><%= l('sms77.labels.filters.groups') %></label>
+    <select id='filter_groups'>
+      <option><%= l('sms77.labels.groups_all') %> (<%= @groups_counts[:_total] %>)</option>
+
+      <% @groups.each do |group| %>
+        <option
+          <% if params[:filter_groups] == group.id %>
+          selected
+          <% end %>
+          value='<%= group.id %>'>
+          <%= group.lastname %> (<%= @groups_counts[group.id] %>)
+        </option>
+      <% end %>
+    </select>
+
+    <label>
+      <%= l('sms77.labels.filters.admin') %>
+      <%= check_box_tag('filter_admin', 1, params[:filter_admin]) %>
+    </label>
+  <% end %>
+  <hr>
+<% end %>
