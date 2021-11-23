@@ -1,0 +1,35 @@
+de:
+  sms77:
+    helpers:
+      api_key: Erforderlich für Versand - Sie können sich gratis einen holen
+      from:
+        sms: Absenderkennung - bis zu 11 alphanumerischen oder 16 numerischen Zeichen
+        voice: Von - muss verifiziert oder eine geteilte virtuelle Rufnummer sein
+      to: Sende an diese Empfängernummer(n), anstatt Benutzer mit gegebenen Filtern zu suchen
+    labels:
+      api_key: API-Schlüssel
+      debug: Debug
+      delay: Versandzeitpunkt
+      filters:
+        admin: Admin
+        groups: Gruppen
+        header: Filter
+      flash: Flash
+      foreign_id: Foreign ID
+      from: Absender
+      groups_all: Alle Gruppen
+      label: Label
+      no_reload: Duplikatversand
+      performance_tracking: Performance Tracking
+      text: Text
+      to: An
+      ttl: Gültigkeitsperiode
+      xml: XML
+    menu:
+      sms: sms77 SMS
+      voice: sms77 Text-zu-Sprachanruf
+    no_recipients_found: Keine Rufnummer(n) gegeben
+    settings:
+      general: Generell
+    sms: SMS
+    voice: Text-zu-Sprachanruf
