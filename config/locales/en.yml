@@ -26,8 +26,8 @@ en:
       ttl: TTL
       xml: XML
     menu:
-      sms: Sms77 SMS
-      voice: Sms77 Voice
+      sms: sms77 SMS
+      voice: sms77 Voice
     no_recipients_found: No recipient(s) given
     settings:
       general: General

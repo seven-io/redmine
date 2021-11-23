@@ -13,7 +13,7 @@ Redmine::Plugin.register :sms77 do
   author 'sms77 e.K.'
   author_url 'https://www.sms77.io'
   description 'Redmine plugin for sending SMS via sms77.io'
-  name 'Sms77 plugin'
+  name 'sms77 plugin'
   url 'https://github.com/sms77io/redmine'
   version '0.0.1'
 end
