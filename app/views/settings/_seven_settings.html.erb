@@ -1,0 +1,23 @@
+<%= field_set_tag l('seven.settings.general') do %>
+  <p>
+    <%= label_tag 'settings[apiKey]', l('seven.labels.api_key') %>
+    <%= text_field_tag 'settings[apiKey]', settings['apiKey'], :maxlength => 90, :style => 'width: 100%' %>
+    <em class='info'><%= l('seven.helpers.api_key') %> @ <a href='https://www.seven.io'>seven</a></em>
+  </p>
+<% end %>
+
+<%= field_set_tag l('seven.sms') do %>
+  <p>
+    <%= label_tag 'settings[sms_from]', l('seven.labels.from') %>
+    <%= text_field_tag 'settings[sms_from]', settings['sms_from'], :maxlength => 16, :style => 'width: 100%' %>
+    <em class='info'><%= l('seven.helpers.from.sms') %></em>
+  </p>
+<% end %>
+
+<%= field_set_tag l('seven.voice') do %>
+  <p>
+    <%= label_tag 'settings[voice_from]', l('seven.labels.from') %>
+    <%= text_field_tag 'settings[voice_from]', settings['voice_from'], :style => 'width: 100%' %>
+    <em class='info'><%= l('seven.helpers.from.voice') %></em>
+  </p>
+<% end %>

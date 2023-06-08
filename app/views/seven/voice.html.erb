@@ -1,0 +1,24 @@
+<h1><%= l('seven.voice') %> - seven.io</h1>
+
+<%= render :partial => 'seven/response' %>
+
+<%= form_tag({}, :method => 'post', :id => 'seven_compose') do %>
+  <%= render :partial => 'seven/filters' %>
+
+  <%= render :partial => 'seven/to' %>
+
+  <%= label_tag 'from', l('seven.labels.from') %>
+  <%= text_field_tag 'from', params[:from] || @settings.value['voice_from'], :style => 'width: 100%' %>
+  <hr>
+
+  <%= label_tag 'xml', l('seven.labels.xml') %>
+  <%= check_box_tag('xml', 1, params[:xml]) %>
+
+  <hr>
+
+  <%= render :partial => 'seven/text', :locals => { :maxlength => 10000 } %>
+
+  <%= submit_tag l(:button_submit) %>
+<% end %>
+
+<%= render :partial => 'seven/js' %>

@@ -1,19 +1,19 @@
-require_dependency 'sms77_hook_listener'
+require_dependency 'seven_hook_listener'
 
-Redmine::Plugin.register :sms77 do
-  menu :admin_menu, :sms77_sms, { controller: 'sms77', action: 'sms' }, caption: :'sms77.menu.sms'
-  menu :admin_menu, :sms77_voice, { controller: 'sms77', action: 'voice' }, caption: :'sms77.menu.voice'
+Redmine::Plugin.register :seven do
+  menu :admin_menu, :seven_sms, { controller: 'seven', action: 'sms' }, caption: :'seven.menu.sms'
+  menu :admin_menu, :seven_voice, { controller: 'seven', action: 'voice' }, caption: :'seven.menu.voice'
 
   settings default: {
     'apiKey' => '',
     'sms_from' => '',
     'voice_from' => ''
-  }, partial: 'settings/sms77_settings'
+  }, partial: 'settings/seven_settings'
 
-  author 'sms77 e.K.'
-  author_url 'https://www.sms77.io'
-  description 'Redmine plugin for sending SMS and making text-to-speech calls via sms77.io'
-  name 'sms77 plugin'
-  url 'https://github.com/sms77io/redmine'
+  author 'seven communications GmbH & Co. KG'
+  author_url 'https://www.seven.io'
+  description 'Redmine plugin for sending SMS and making text-to-speech calls via seven.io'
+  name 'seven plugin'
+  url 'https://github.com/seven-io/redmine'
   version '0.1.0'
 end

@@ -1,0 +1,49 @@
+<h1><%= l('seven.sms') %> - seven.io</h1>
+
+<%= render :partial => 'seven/response' %>
+
+<%= form_tag({}, :method => 'post', :id => 'seven_compose') do %>
+  <%= render :partial => 'seven/filters' %>
+
+  <%= render :partial => 'seven/to' %>
+
+  <%= label_tag 'ttl', l('seven.labels.ttl') %>
+  <%= text_field_tag 'ttl', params[:ttl], :style => 'width: 100%', :type => 'number' %>
+  <hr>
+
+  <%= label_tag 'delay', l('seven.labels.delay') %>
+  <%= text_field_tag 'delay', params[:delay], :style => 'width: 100%' %>
+  <hr>
+
+  <%= label_tag 'label', l('seven.labels.label') %>
+  <%= text_field_tag 'label', params[:label], :maxlength => 100, :style => 'width: 100%' %>
+  <hr>
+
+  <%= label_tag 'foreign_id', l('seven.labels.foreign_id') %>
+  <%= text_field_tag 'foreign_id', params[:foreign_id], :maxlength => 64, :style => 'width: 100%' %>
+  <hr>
+
+  <%= label_tag 'from', l('seven.labels.from') %>
+  <%= text_field_tag 'from', params[:from] || @settings.value['sms_from'], :maxlength => 16, :style => 'width: 100%' %>
+  <hr>
+
+  <%= label_tag 'flash', l('seven.labels.flash') %>
+  <%= check_box_tag('flash', 1, params[:flash]) %>
+
+  <%= label_tag 'no_reload', l('seven.labels.no_reload') %>
+  <%= check_box_tag('no_reload', 1, params[:no_reload]) %>
+
+  <%= label_tag 'performance_tracking', l('seven.labels.performance_tracking') %>
+  <%= check_box_tag('performance_tracking', 1, params[:performance_tracking]) %>
+
+  <%= label_tag 'debug', l('seven.labels.debug') %>
+  <%= check_box_tag('debug', 1, params[:debug]) %>
+
+  <hr>
+
+  <%= render :partial => 'seven/text', :locals => { :maxlength => 1520 } %>
+
+  <%= submit_tag l(:button_submit) %>
+<% end %>
+
+<%= render :partial => 'seven/js' %>

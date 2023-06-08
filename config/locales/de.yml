@@ -1,5 +1,5 @@
 de:
-  sms77:
+  seven:
     helpers:
       api_key: Erforderlich für Versand - Sie können sich gratis einen holen
       from:
@@ -26,8 +26,8 @@ de:
       ttl: Gültigkeitsperiode
       xml: XML
     menu:
-      sms: sms77 SMS
-      voice: sms77 Text-zu-Sprachanruf
+      sms: seven SMS
+      voice: seven Text-zu-Sprachanruf
     no_recipients_found: Keine Rufnummer(n) gegeben
     settings:
       general: Generell

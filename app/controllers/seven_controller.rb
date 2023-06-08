@@ -3,7 +3,7 @@ require 'sms77/client'
 require 'sms77/resource'
 require_relative '../../db/migrate/001_populate_custom_fields'
 
-class Sms77Controller < ApplicationController
+class SevenController < ApplicationController
   def self.custom_field_mobile
     CustomField.find_by_name(PopulateCustomFields::MOBILE_FIELD_NAME)
   end
@@ -17,7 +17,7 @@ class Sms77Controller < ApplicationController
     super
 
     @responses = []
-    @settings = Setting.find_by_name('plugin_sms77')
+    @settings = Setting.find_by_name('plugin_seven')
   end
 
   def index
@@ -54,15 +54,15 @@ class Sms77Controller < ApplicationController
       users = User.admin(admin)
       users = users.in_group(params[:filter_groups]) if params.key?(:filter_groups)
 
-      mobile_field = Sms77Controller.custom_field_mobile
+      mobile_field = SevenController.custom_field_mobile
 
       users.all.each do |user|
-        mobile = Sms77Controller.user_mobile(user, mobile_field)
+        mobile = SevenController.user_mobile(user, mobile_field)
         to.append(mobile) unless mobile.nil?
       end
 
       if to.blank?
-        @responses.append l('sms77.no_recipients_found')
+        @responses.append l('seven.no_recipients_found')
 
         return false
       end

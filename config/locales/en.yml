@@ -1,5 +1,5 @@
 en:
-  sms77:
+  seven:
     helpers:
       api_key: Required for sending - get yours for free now
       from:
@@ -26,8 +26,8 @@ en:
       ttl: TTL
       xml: XML
     menu:
-      sms: sms77 SMS
-      voice: sms77 Voice
+      sms: seven SMS
+      voice: seven Voice
     no_recipients_found: No recipient(s) given
     settings:
       general: General
