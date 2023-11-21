@@ -8,7 +8,6 @@ en:
       to: send to given recipient(s) instead of querying users with given filters
     labels:
       api_key: API Key
-      debug: Debug
       delay: Delay
       filters:
         admin: Admin

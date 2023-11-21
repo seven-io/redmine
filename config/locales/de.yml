@@ -8,7 +8,6 @@ de:
       to: Sende an diese Empfängernummer(n), anstatt Benutzer mit gegebenen Filtern zu suchen
     labels:
       api_key: API-Schlüssel
-      debug: Debug
       delay: Versandzeitpunkt
       filters:
         admin: Admin

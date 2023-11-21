@@ -36,9 +36,6 @@
   <%= label_tag 'performance_tracking', l('seven.labels.performance_tracking') %>
   <%= check_box_tag('performance_tracking', 1, params[:performance_tracking]) %>
 
-  <%= label_tag 'debug', l('seven.labels.debug') %>
-  <%= check_box_tag('debug', 1, params[:debug]) %>
-
   <hr>
 
   <%= render :partial => 'seven/text', :locals => { :maxlength => 1520 } %>
