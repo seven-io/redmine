@@ -4,14 +4,14 @@
 
 ## Prerequisites
 
-- An API key from seven - [get one for free](https://app.seven.io/signup)
+- An [API key](https://help.seven.io/en/api-key-access) from seven - [get one for free](https://app.seven.io/signup)
 
 ### Installation
 
 This plugin adds a custom field named `Mobile Phone`.
 
 1. Extract the archive to `/path/to/redmine/plugins`
-2. Run `RAILS_ENV=production bundle exec rake redmine:plugins:migrate`
+2. Run `bundle install && rails redmine:plugins NAME=seven`
 3. Restart Redmine
 4. Go to `Administration->Plugins->seven` and click `Configure`
 5. Fill out the API key and press `Apply`
