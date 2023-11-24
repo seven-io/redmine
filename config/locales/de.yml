@@ -30,5 +30,12 @@ de:
     no_recipients_found: Keine Rufnummer(n) gegeben
     settings:
       general: Generell
+      issues:
+        label: Nachrichtenversand bei neuen Tickets
+        priority:
+          help: Definiert bei welcher Priorität Nachrichten versendet werden sollen
+        to:
+          assignee: Person beauftragt mit dem Ticket
+          help: Definiert das Empfangsziel - es können auch beliebige Rufnummern angegeben werden
     sms: SMS
     voice: Text-zu-Sprachanruf

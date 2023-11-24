@@ -13,11 +13,15 @@ class SevenController < ApplicationController
     val.nil? ? nil : val.value
   end
 
+  def self.get_settings
+    Setting.find_by_name('plugin_seven')
+  end
+
   def initialize
     super
 
     @responses = []
-    @settings = Setting.find_by_name('plugin_seven')
+    @settings = SevenController.get_settings
   end
 
   def index

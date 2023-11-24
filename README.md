@@ -22,6 +22,7 @@ This plugin adds a custom field named `Mobile Phone`.
 - Issue (bulk) voice calls via `Administration->seven Voice`
 - Limit bulk messaging to group and/or admin only
 - Message individual users via their profile
+- SMS dispatch after issue creation to assigned user or custom phone number
 
 ##### Support
 

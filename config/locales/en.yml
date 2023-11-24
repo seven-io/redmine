@@ -4,7 +4,7 @@ en:
       api_key: Required for sending - get yours for free now
       from:
         sms: Sender number - may contain up to 11 alphanumeric or 16 numeric characters
-        voice: Caller ID - please use only verified sender IDs, one of your virtual inbound numbers or one of our shared virtual numbers
+        voice: Caller ID - please use only verified sender IDs, one of your inbound numbers or one of our shared virtual numbers
       to: send to given recipient(s) instead of querying users with given filters
     labels:
       api_key: API Key
@@ -30,5 +30,12 @@ en:
     no_recipients_found: No recipient(s) given
     settings:
       general: General
+      issues:
+        label: Send text after a new issue has been created
+        priority:
+          help: Defines the priority at which messages are to be sent
+        to:
+          assignee: The issue assignee
+          help: Defines the recipient - you can also enter a phone number of choice
     sms: SMS
     voice: Voice

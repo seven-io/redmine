@@ -7,7 +7,10 @@ Redmine::Plugin.register :seven do
   settings default: {
     'apiKey' => '',
     'sms_from' => '',
-    'voice_from' => ''
+    'voice_from' => '',
+    'issue_priority' => '1',
+    'issue_to' => '',
+    'issue_text' => '',
   }, partial: 'settings/seven_settings'
 
   author 'seven communications GmbH & Co. KG'
@@ -15,5 +18,5 @@ Redmine::Plugin.register :seven do
   description 'Redmine plugin for sending SMS and making text-to-speech calls via seven.io'
   name 'seven plugin'
   url 'https://github.com/seven-io/redmine'
-  version '0.2.0'
+  version '0.3.0'
 end

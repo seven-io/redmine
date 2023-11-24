@@ -21,3 +21,32 @@
     <em class='info'><%= l('seven.helpers.from.voice') %></em>
   </p>
 <% end %>
+
+<%= field_set_tag l('seven.settings.issues.label') do %>
+  <p>
+    <label for='settings_issue_priority'><%= l(:field_priority) %></label>
+    <%= select_tag('settings[issue_priority]',
+                     options_from_collection_for_select(IssuePriority.active, :id, :name, settings['issue_priority']),
+                     {:multiple => true}
+        ) %>
+    <em class='info'><%= l('seven.settings.issues.priority.help') %></em>
+  </p>
+
+  <p>
+    <label for='seven_issue_recipient_choice'><%= l('seven.labels.to') %></label>
+    <input
+      id='seven_issue_recipient_choice'
+      list='seven_issue_recipient'
+      name='settings[issue_to]'
+      value='<%= settings['issue_to'] %>'
+    />
+
+    <datalist id='seven_issue_recipient'>
+      <option value='assignee'><%= l('seven.settings.issues.to.assignee') %></option>
+    </datalist>
+    <em class='info'><%= l('seven.settings.issues.to.help') %></em>
+
+    <%= label_tag 'settings_issue_text', l('seven.labels.text') %>
+    <%= text_area_tag 'settings[issue_text]', settings['issue_text'], :maxlength => 1520, :rows => 5 %>
+  </p>
+<% end %>
