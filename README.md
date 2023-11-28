@@ -11,10 +11,11 @@
 This plugin adds a custom field named `Mobile Phone`.
 
 1. Extract the archive to `/path/to/redmine/plugins`
-2. Run `bundle install && rails redmine:plugins NAME=seven`
-3. Restart Redmine
-4. Go to `Administration->Plugins->seven` and click `Configure`
-5. Fill out the API key and press `Apply`
+2. Run `bundle install`
+3. Run `bundle exec rake redmine:plugins:migrate RAILS_ENV=production NAME=seven`
+4. Restart Redmine
+5. Go to `Administration->Plugins->seven` and click `Configure`
+6. Fill out the API key and press `Apply`
 
 #### Features
 
