@@ -1,6 +1,7 @@
 module Seven
   module Hooks
     class ControllerHooks < Redmine::Hook::Listener
+      #noinspection RubyInstanceMethodNamingConvention
       def controller_issues_new_after_save(context = {})
         settings = SevenController.get_settings
 
@@ -8,6 +9,7 @@ module Seven
         if text.empty?
           return
         end
+        text = text.gsub(/{{id}}/, context[:issue].id.to_s)
 
         api_key = settings.value['apiKey']
         if api_key.empty?
