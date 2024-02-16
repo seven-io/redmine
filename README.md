@@ -26,6 +26,7 @@ This plugin adds a custom field named `Mobile Phone`.
 - SMS dispatch after issue creation to assigned user or custom phone number
     - Supported placeholders:
         - {{id}} => Resolves to the issue ID
+- Support bulk SMS for [RedmineUP CRM Plugin](https://www.redmineup.com/pages/plugins/crm) (Contacts only)
 
 ##### Support
 

@@ -3,7 +3,7 @@ de:
     helpers:
       api_key: Erforderlich für Versand - Sie können sich gratis einen holen
       from:
-        sms: Absenderkennung - bis zu 11 alphanumerischen oder 16 numerischen Zeichen
+        sms: Absenderkennung - bis zu 11 alphanumerische oder 16 numerische Zeichen
         voice: Von - muss verifiziert oder eine geteilte virtuelle Rufnummer sein
       to: Sende an diese Empfängernummer(n), anstatt Benutzer mit gegebenen Filtern zu suchen
     labels:
@@ -13,6 +13,7 @@ de:
         admin: Admin
         groups: Gruppen
         header: Filter
+        table: Tabelle
       flash: Flash
       foreign_id: Foreign ID
       from: Absender

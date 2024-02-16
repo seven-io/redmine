@@ -1,8 +1,8 @@
 <% if request.query_parameters[:to].nil? %>
   <%= field_set_tag l('seven.labels.filters.header') do %>
     <label for='filter_groups'><%= l('seven.labels.filters.groups') %></label>
-    <select id='filter_groups'>
-      <option><%= l('seven.labels.groups_all') %> (<%= @groups_counts[:_total] %>)</option>
+    <select id='filter_groups' name='filter_groups'>
+      <option value=''><%= l('seven.labels.groups_all') %> (<%= @groups_counts[:_total] %>)</option>
 
       <% @groups.each do |group| %>
         <option
@@ -11,6 +11,19 @@
           <% end %>
           value='<%= group.id %>'>
           <%= group.lastname %> (<%= @groups_counts[group.id] %>)
+        </option>
+      <% end %>
+    </select>
+
+    <label for='filter_table'><%= l('seven.labels.filters.table') %></label>
+    <select id='filter_table' name='filter_table' required>
+      <% @tables.each do |table| %>
+        <option
+          <% if params[:filter_table] == table %>
+          selected
+          <% end %>
+          value='<%= table %>'>
+          <%= table %>
         </option>
       <% end %>
     </select>

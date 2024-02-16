@@ -13,6 +13,7 @@ en:
         admin: Admin
         groups: Groups
         header: Filters
+        table: Table
       flash: Flash
       foreign_id: Foreign ID
       from: From

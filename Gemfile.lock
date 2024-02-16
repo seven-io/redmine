@@ -19,7 +19,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sms77
+  sms77 (= 0.4.0)
 
 BUNDLED WITH
    1.17.3

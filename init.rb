@@ -18,5 +18,5 @@ Redmine::Plugin.register :seven do
   description 'Redmine plugin for sending SMS and making text-to-speech calls via seven.io'
   name 'seven plugin'
   url 'https://github.com/seven-io/redmine'
-  version '0.4.0'
+  version '0.5.0'
 end
