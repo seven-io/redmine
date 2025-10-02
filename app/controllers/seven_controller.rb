@@ -124,7 +124,7 @@ class SevenController < ApplicationController
   def send_sms
     if build_recipients
       sms_params = params.to_unsafe_h.slice(
-        :delay, :foreign_id, :flash, :from, :label, :no_reload, :text, :to, :ttl, :performance_tracking
+        :delay, :foreign_id, :flash, :from, :label, :text, :to, :ttl, :performance_tracking
       )
 
       sms_params[:to] = sms_params[:to].join(',')

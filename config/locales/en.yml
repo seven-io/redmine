@@ -19,7 +19,6 @@ en:
       from: From
       groups_all: All Groups
       label: Label
-      no_reload: No Reload
       performance_tracking: Performance Tracking
       text: Text
       to: To
