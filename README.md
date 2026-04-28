@@ -1,127 +1,96 @@
-<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
+<p align="center">
+  <img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" alt="seven logo" />
+</p>
 
-# Seven.io Redmine Plugin
+<h1 align="center">seven SMS &amp; Voice for Redmine</h1>
 
-Official [seven.io](https://www.seven.io) plugin for [Redmine](https://www.redmine.org/) that enables SMS and voice messaging capabilities.
+<p align="center">
+  Bulk and event-based SMS / voice messaging for <a href="https://www.redmine.org/">Redmine</a> via the seven gateway. Includes RedmineUP CRM support.
+</p>
 
-## Overview
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-teal.svg" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/Redmine-Rails%205.2%2B-d1393a" alt="Redmine on Rails 5.2+" />
+  <img src="https://img.shields.io/badge/Ruby-2.7%2B-red" alt="Ruby 2.7+" />
+</p>
 
-This plugin integrates seven.io's SMS and voice services with Redmine, allowing administrators to send bulk messages to users and automatically notify assignees when issues are created. It supports filtering by user groups and roles, and integrates with the RedmineUP CRM plugin for contact management.
-
-## Prerequisites
-
-- Redmine installation (compatible with Rails 5.2+)
-- An [API key](https://help.seven.io/en/api-key-access) from seven.io - [get one for free](https://app.seven.io/signup)
-- Admin privileges in Redmine
-
-## Installation
-
-1. **Download and Extract**
-   ```bash
-   cd /path/to/redmine/plugins
-   # Extract the plugin archive here
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   bundle install
-   ```
-
-3. **Run Migration**
-   ```bash
-   bundle exec rake redmine:plugins:migrate RAILS_ENV=production NAME=seven
-   ```
-
-4. **Restart Redmine**
-   ```bash
-   # Restart your Redmine server
-   ```
-
-5. **Configure Plugin**
-   - Navigate to `Administration → Plugins → seven`
-   - Click `Configure`
-   - Enter your seven.io API key
-   - Configure additional settings as needed
-   - Click `Apply`
+---
 
 ## Features
 
-### Core Functionality
-- **Bulk SMS Messaging**: Send SMS to multiple users via `Administration → seven SMS`
-- **Bulk Voice Calls**: Make voice calls to multiple users via `Administration → seven Voice`
-- **User Filtering**: Limit messaging to specific groups and/or admin users only
-- **Individual Messaging**: Send messages to individual users via their profile pages
+- **Bulk SMS / Voice** - Reach all users (or a filtered subset) via **Administration > seven SMS** / **seven Voice**
+- **Issue-Based Notifications** - Auto-fire SMS to the assignee on issue creation, gated by priority
+- **Per-User Mobile Field** - Plugin auto-installs a custom field "Mobile Phone" on users
+- **CRM Integration** - Bulk SMS to RedmineUP CRM contacts (when the [RedmineUP CRM plugin](https://www.redmineup.com/pages/plugins/crm) is installed)
+- **Profile Shortcuts** - SMS / Voice links right on each user's profile page
+- **Bilingual** - English and German translations bundled
 
-### Issue Integration
-- **Automatic Notifications**: SMS dispatch after issue creation to assigned user or custom phone number
-- **Priority Filtering**: Configure which issue priorities trigger notifications
-- **Placeholder Support**: Use dynamic content in messages
-  - `{{id}}` → Resolves to the issue ID
+## Prerequisites
 
-### CRM Integration
-- **RedmineUP CRM Support**: Send bulk SMS to contacts when [RedmineUP CRM Plugin](https://www.redmineup.com/pages/plugins/crm) is installed
+- Redmine on Rails 5.2 or higher
+- Admin privileges in Redmine
+- A [seven account](https://www.seven.io/) with API key ([How to get your API key](https://help.seven.io/en/developer/where-do-i-find-my-api-key))
 
-### User Experience
-- **Mobile Phone Field**: Automatically adds a "Mobile Phone" custom field for users
-- **Multi-language Support**: Available in English and German
-- **Profile Integration**: SMS/Voice links appear on user profile pages
+## Installation
+
+```bash
+cd /path/to/redmine/plugins
+# extract the plugin archive into ./seven
+bundle install
+bundle exec rake redmine:plugins:migrate RAILS_ENV=production NAME=seven
+```
+
+Restart Redmine, then go to **Administration > Plugins > seven > Configure** and paste your seven API key.
 
 ## Configuration
 
-### Plugin Settings
-Access via `Administration → Plugins → seven → Configure`:
+| Setting | Description |
+|---------|-------------|
+| API Key | Your seven API key |
+| SMS From | Default sender ID for SMS (max 11 alphanumeric / 16 numeric) |
+| Voice From | Default caller ID (verified or shared number) |
+| Issue Priority | Which issue priorities trigger automatic SMS |
+| Issue Recipient | Send to assignee or to a custom phone number |
+| Issue Text | Message template - supports `{{id}}` for the issue ID |
 
-- **API Key**: Your seven.io API key (required)
-- **SMS From**: Sender number (up to 11 alphanumeric or 16 numeric characters)
-- **Voice From**: Caller ID (use verified sender IDs or shared virtual numbers)
-- **Issue Priority**: Which priorities trigger automatic SMS notifications
-- **Issue Recipient**: Send to assignee or custom phone number
-- **Issue Text**: Message template with placeholder support
+### Per-user setup
 
-### User Setup
-Users need to add their mobile phone number in their profile:
-1. Go to `My Account`
-2. Fill in the "Mobile Phone" field
-3. Save changes
+Each user fills the auto-installed *Mobile Phone* custom field via **My Account**.
 
 ## Usage
 
-### Sending Bulk Messages
-1. Navigate to `Administration → seven SMS` or `Administration → seven Voice`
-2. Choose recipient filters (groups, admin status, table)
-3. Enter your message
-4. Configure additional options (sender, delay, etc.)
-5. Send
+### Bulk Messages
+
+1. Go to **Administration > seven SMS** or **seven Voice**.
+2. Filter recipients (groups, admin, or RedmineUP table).
+3. Compose the message and send.
 
 ### Individual Messages
-1. Visit a user's profile page
-2. Click "seven SMS" or "seven Voice" links
-3. Compose and send your message
+
+Open any user profile and click **seven SMS** or **seven Voice**.
+
+### Automatic Issue Notifications
+
+Once configured, new issues matching the priority filter trigger an SMS to the assignee or the configured number.
 
 ## Troubleshooting
 
-### Common Issues
-- **No recipients found**: Ensure users have mobile phone numbers in their profiles
-- **API errors**: Verify your API key is correct and has sufficient credits
-- **Migration issues**: Check Rails environment and plugin name are correct
+| Problem | Solution |
+|---------|----------|
+| No recipients found | Make sure target users have the *Mobile Phone* custom field filled |
+| API errors | Verify the API key and account balance |
+| Migration issues | Confirm `RAILS_ENV` and `NAME=seven` are set correctly |
 
-### Logs
-Check Redmine logs for detailed error information when troubleshooting API calls or hook executions.
+## Uninstalling
 
-## Development
-
-### Uninstalling
-To remove the plugin:
 ```bash
 bundle exec rake redmine:plugins:migrate VERSION=0 RAILS_ENV=production NAME=seven
 ```
 
 ## Support
 
-Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/).
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/) or [open an issue](https://github.com/seven-io/redmine/issues).
 
 ## License
 
-[![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+[MIT](LICENSE)
